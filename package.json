@@ -1,0 +1,19 @@
+{
+  "name": "culturegallery",
+  "version": "1.0.0",
+  "description": "공연문화정보 API 기반의 문화,전시 카테고리화 정보제공 및 구독 웹서비스",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://khuhub.khu.ac.kr/2019102210/CultureGallery.git"
+  },
+  "author": "Hyoseob Song",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
