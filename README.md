@@ -94,8 +94,3 @@ npm install -g npm
 * db 내용 검색 기능 개선 필요.<br>
 * 비동기식 코드 동기식으로 변경 필요<br>
 * 검색하기 페이지에서 여러번 검색시 테이블 초기화 필요<br>
-
-
-## 연락처
-이유제: dbwp031@khu.ac.kr<br>
-송효섭: crad_on25@khu.ac.kr<br>
