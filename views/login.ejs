@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Culture Gallery</title>
+    <link rel="stylesheet" href='/stylesheets/login_style.css' type="text/css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <img src="../images/icon.png" alt="" class="logo">
+
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Testimonimal</a></li>
+                <li><a href="">Career</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        </div>
+        <div class="welcome">
+
+            <h1>로그인</h1>
+            <a id="kakao-login-btn"></a>
+
+        </div>
+
+    </header>
+</body>
+<script>
+    // 카카오 계정으로
+    Kakao.init('0678e32dab56db1c52ac63ab4ccb7663');
+
+    console.log(Kakao.isInitialized());
+
+    Kakao.Auth.createLoginButton({
+        container: '#kakao-login-btn',
+        success: function (authObj) {
+            console.log(JSON.stringify(authObj));
+            alert(JSON.stringify(authObj));//authObj -> 토큰임.
+        },
+        fail: function (err) {
+            alert(JSON.stringify(err));
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> findpage</title>
+    <link rel="stylesheet" href='/stylesheets/findPage_style.css' type="text/css">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('0678e32dab56db1c52ac63ab4ccb7663')
+        function sendLink(id) {
+            var data = [];
+            var strData = "<%= data %>";
+            var splitData = strData.split(',');
+            for (var i = 0; i < splitData.length; i += 5) {
+                data.push([Number(splitData[i]), splitData[i + 1], Number(splitData[i + 2]), Number(splitData[i + 3]), splitData[i + 4], splitData[i + 5]]);
+            }
+            var index;
+            for (var i = 0; i < data.length; i++) {
+                console.log(data.length);
+                if (data[i][0] === id) {
+                    index = i;
+                    Kakao.Link.sendDefault({
+                        objectType: 'location',
+                        address: `${data[i][5]}`,
+                        addressTitle: `${data[i][1]}`,
+                        content: {
+                            title: `공연 이름: ${data[i][1]}\n공연 위치: ${data[i][5]}`,
+                            description: `${splitData[i + 2]}`,
+                            imageUrl: 'https://ifh.cc/g/aEvr86.png',
+                            link: {
+                                mobileWebUrl: 'https://culturegallery.herokuapp.com/',
+                                webUrl: 'https://culturegallery.herokuapp.com/',
+                            },
+                        },
+                        buttons: [
+                            {
+                                title: 'Culture Gallery',
+                                link: {
+                                    mobileWebUrl: 'https://culturegallery.herokuapp.com/',
+                                    webUrl: 'https://culturegallery.herokuapp.com/',
+                                },
+                            },
+                        ],
+                    })
+                }
+            }
+
+        }            
+    </script>
+</head>
+
+<body>
+    <h1 class='name'>공연 이름을 검색해보세요!</h1>
+
+    <div class="question">
+        <input type="text" value='' id="inputText" placeholder="어떤 공연을 찾으시나요?">
+        <button onclick='find()'>검색</button>
+    </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>행사 이름</th>
+            <th>시작 날짜</th>
+            <th>주소</th>
+            <th>이동하기</th>
+        </tr>
+        <tbody id="map-data">
+
+        </tbody>
+    </table>
+
+    </div>
+    <script>
+        function find() {
+            var row = ``;
+            var input = document.getElementById('inputText').value;
+            var dataContainer = document.getElementById('map-data');
+            var data = [];
+            var strData = "<%= data %>";
+            var splitData = strData.split(',');
+            for (var i = 0; i < splitData.length; i += 5) {
+                data.push([Number(splitData[i]), splitData[i + 1], Number(splitData[i + 2]), Number(splitData[i + 3]), splitData[i + 4], splitData[i + 5]]);
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                if (data[i][1].indexOf(input) != -1) {
+                    row = `<tr>
+                                    <td> ${data[i][0]}</td>
+                                    <td> ${data[i][1]}</td>
+                                    <td> ${data[i][4]}</td>
+                                    <td> ${data[i][5]}</td>
+                                    
+                                    <td> <input type="button" onclick="sendLink(${data[i][0]})" value="전송하기">   </td>
+                                    
+                                  </tr>`
+                    dataContainer.innerHTML += row;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
