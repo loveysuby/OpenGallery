@@ -1,0 +1,57 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-bar
+{
+    background: #000;
+    height: 80px;
+}
+.logo{
+    margin: 10px 50px;
+    height: 65px;
+}
+
+.menu{
+    float: right;
+    list-style: none;
+    margin:20px;
+}
+
+.menu li{
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    border: 1px solid #fff;
+}
+
+.menu li a:hover{
+    background: #fff;
+    transition: .4s;
+    color: #000;
+}
+
+.welcome{
+    position: absolute;
+    text-align:center;
+    font-family: sans-serif;
+    color:#000;
+    top: 30%;   
+    left: 40%;
+}
+
+.welcome h1{
+    font-size: 42px;
+    margin: 25px;
+}
+

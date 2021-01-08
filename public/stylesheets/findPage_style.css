@@ -1,0 +1,39 @@
+table{
+    position: absolute;
+    z-index: 2;
+    left:50%;
+    top: 20vh;
+    margin-left: -75vh;
+    width: 150vh;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    background: #fafafa;
+    text-align: center;
+}
+th,td{
+    padding:12px 15px;
+}
+th{
+    background: #303f9f;
+    color: #fafafa;
+    text-transform: uppercase;
+}
+
+tr:nth-child(odd){
+    background-color: #eeeeee;
+}
+.name{
+    position: absolute;
+    width: 70vh;
+    left:50%;
+    margin-left:-35vh;
+}
+.question{
+    position: absolute;
+    top: 15vh;
+    width: 40vh;
+    left: 50%;
+    margin-left:-15vh;
+}
