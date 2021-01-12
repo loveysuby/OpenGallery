@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-var bodyparser = require('body-parser');
 var url = require('url');
 require('dotenv').config();
 
@@ -9,7 +8,7 @@ require('dotenv').config();
 var mainRouter = require('./routes') //호출시 index.js 실행 (main.js : title 할당하고 main.html 열어줌)
 
 //디폴트 포트 값 : 8000 
-app.set('port', process.env.PORT || 23023);
+app.set('port', process.env.PORT || 8000);
 
 //ejs (html포맷) 파일을 웹사이트에 view로 띄워주기 위한 view engine 설정.
 app.set('views', path.join(__dirname, 'views'));
