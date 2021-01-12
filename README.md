@@ -1,4 +1,4 @@
-# Culture Gallery
+# Open Gallery
 
 ## 사이트 주소
 https://culturegallery.herokuapp.com/
