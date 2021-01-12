@@ -40,7 +40,7 @@
                         },
                         buttons: [
                             {
-                                title: 'Culture Gallery',
+                                title: 'Open Gallery',
                                 link: {
                                     mobileWebUrl: 'https://culturegallery.herokuapp.com/',
                                     webUrl: 'https://culturegallery.herokuapp.com/',
@@ -163,12 +163,12 @@
                 }
                 //   
                 // 마커와 인포윈도우를 표시합니다
-
-
             });
 
         } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 
+
+            //기본 위치 설정값 변경하기
             var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
                 message = 'geolocation을 사용할수 없어요..'
 
